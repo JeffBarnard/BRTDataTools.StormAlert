@@ -1,0 +1,9 @@
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\GPDataTools.StormAlert.runtimeconfig.json
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\GPDataTools.StormAlert.pdb
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\..\bin\Release\net6.0-ios\ios-arm64\GPDataTools.StormAlert.app\\\icudt.dat
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\icudt_CJK.dat
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\icudt_EFIGS.dat
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\icudt_no_CJK.dat
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\Microsoft.iOS.registrar.a
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\libxamarin-dotnet-debug.a
+C:\Users\jbarnard\source\repos\JeffBarnard\GPDataTools.StormAlert\GPDataTools.StormAlert\art\libxamarin-dotnet.a

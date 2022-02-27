@@ -1,0 +1,133 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GPDataTools.StormAlert.MainPage"
+             xmlns:local="clr-namespace:GPDataTools.StormAlert"
+             xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+    
+    <Grid>
+        <!--Padding="{OnPlatform iOS='30,60,30,30', Default='30'}"-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="128" />  <!-- Header -->
+            <RowDefinition Height="*" />    <!-- Content -->
+            <RowDefinition Height="128" />  <!-- Ad -->
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" BackgroundColor="{DynamicResource PrimaryColor}" />
+
+        <!-- Content -->
+        <Grid Grid.Row="1" BackgroundColor="LightGray">
+
+            <Border HorizontalOptions="Center" Margin="-84 -6 16 0"
+                    Stroke="White" StrokeThickness="40">
+                <!--<Border.Shadow>
+                    <Shadow Brush="#000000" 
+                            Offset="20,20"
+                            Radius="40"
+                            Opacity="0.8" />
+                </Border.Shadow>-->               
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="40"/>
+                </Border.StrokeShape>               
+                <VerticalStackLayout BackgroundColor="White" WidthRequest="320" Margin="0 0 12 0">                    
+                    <Grid Grid.Row="1">
+                         <Grid.RowDefinitions>
+                            <RowDefinition Height="82"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Label x:Name="CounterLabel" Grid.Row="0" Margin="6 0 0 0"
+                               Text="Air Pressure"
+                               TextColor="Black" Opacity="0.54"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+
+                        <Label x:Name="CounterValue" Grid.Row="0" Margin="34 0 0 0"
+                               Text="{Binding CounterValue}"
+                               TextColor="Black" Opacity="0.54"
+                               FontSize="24"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+
+                        <Label x:Name="UnitsLabel" Grid.Row="0" Margin="66 0 0 0"
+                               Text="hectopascal"
+                               TextColor="Black" Opacity="0.54"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+
+                        <!-- Column chart -->
+                        <dxc:ChartView Grid.Row="1" HeightRequest="220" Opacity="0.76">
+                            <dxc:ChartView.AxisX>
+                                <dxc:NumericAxisX>
+                                    <dxc:NumericAxisX.Label>
+                                        <dxc:AxisLabel Visible="False" />
+                                    </dxc:NumericAxisX.Label>
+                                </dxc:NumericAxisX>
+                            </dxc:ChartView.AxisX>
+                            <dxc:ChartView.AxisY>
+                                <dxc:NumericAxisY>
+                                    <dxc:NumericAxisY.Label>
+                                        <dxc:AxisLabel Visible="False" />
+                                    </dxc:NumericAxisY.Label>
+                                </dxc:NumericAxisY>
+                            </dxc:ChartView.AxisY>
+
+                            <dxc:ChartView.Series>
+                                <dxc:BarSeries>
+                                    <dxc:BarSeries.Style>
+                                        <dxc:BarSeriesStyle Fill="#512bdf" />
+                                    </dxc:BarSeries.Style>
+                                    <dxc:BarSeries.Data>
+                                        <dxc:SeriesDataAdapter DataSource="{Binding PressureHistory}"
+                                                               ArgumentDataMember="Bucket">
+                                            <dxc:ValueDataMember Type="Value" Member="Pressure"/>
+                                        </dxc:SeriesDataAdapter>
+                                    </dxc:BarSeries.Data>
+                                </dxc:BarSeries>
+                            </dxc:ChartView.Series>
+                        </dxc:ChartView>
+
+                        <Label x:Name="TimeframeLabel" Grid.Row="2" Margin="-6 0 0 0"
+                               Text="Last 24 hours"
+                               TextColor="Black" Opacity="0.54"
+                               FontSize="12"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+
+                        <Label x:Name="StatusLabel" Grid.Row="2" Margin="38 -2 0 0"
+                               Text="{Binding StatusLabel}"
+                               TextColor="Black"
+                               Opacity="0.54" 
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center" />
+
+                        <Image x:Name="TrendImage" Grid.Row="3" Margin="-8 0 0 0"
+                               Source="{Binding TrendImage}"
+                               Opacity="0.54"
+                               WidthRequest="120"
+                               HeightRequest="120"
+                               HorizontalOptions="CenterAndExpand" />
+
+                    </Grid>
+
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+
+        <!-- Ad -->
+        <Grid GridLayout.Row="2" BackgroundColor="DarkGray">
+            <Label Text="Ad space" Margin="-16 0 0 0"
+                   HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                   FontSize="24" TextColor="Black" />
+        </Grid>
+    </Grid>
+   
+</ContentPage>
+
+    

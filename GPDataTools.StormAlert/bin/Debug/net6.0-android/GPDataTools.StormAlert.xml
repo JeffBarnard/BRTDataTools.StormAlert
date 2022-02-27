@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GPDataTools.StormAlert</name>
+    </assembly>
+    <members>
+        <member name="T:GPDataTools.StormAlert.MainPage">
+            <summary>
+            Presentation only
+            </summary>
+        </member>
+        <member name="T:GPDataTools.StormAlert.ViewModels.MainViewModel">
+            <summary>
+            Presentation ViewModel
+            
+            Fody property change weaver
+            
+            </summary>
+        </member>
+        <member name="M:GPDataTools.StormAlert.ViewModels.MainViewModel.OnUpdatePressureLabel(System.Double)">
+            <summary>
+            Delegate event when sensor value changes
+            </summary>
+            <param name="pressure"></param>
+        </member>
+        <member name="T:GPDataTools.StormAlert.Services.BarometerService">
+            <summary>
+            Barometer service. We don't want to constantly read data and consume CPU/Battery, so this
+            service will automatically sleep and wake itself occasionally
+            </summary>
+        </member>
+        <member name="T:GPDataTools.StormAlert.Services.GpsService">
+            <summary>
+            Barometer service. We don't want to constantly read data and consume CPU/Battery, so this
+            service will automatically sleep and wake itself occasionally
+            </summary>
+        </member>
+        <member name="T:GPDataTools.StormAlert.Platforms.Android.NotificationService">
+            <summary>
+            Android implementation of INotificationService
+            </summary>
+        </member>
+    </members>
+</doc>
