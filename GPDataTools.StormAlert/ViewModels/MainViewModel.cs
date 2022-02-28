@@ -48,6 +48,10 @@ public class MainViewModel : BaseViewModel
 
         
         TestAlertCommand = new Command(() => {
+
+            StatusLabel = "Warning";
+            TrendImage = "storm.png";
+
             // Notification test
             Services.ServiceProvider.GetService<INotificationService>()
                     ?.ShowNotification("Storm Alert", "An incoming storm front has been detected! 😲");
