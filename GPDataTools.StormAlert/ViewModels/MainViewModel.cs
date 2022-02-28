@@ -31,6 +31,8 @@ public class MainViewModel : BaseViewModel
 
     public List<PressureChartData> PressureHistory { get; }
 
+    public Command TestAlertCommand { get; set; }
+
     #endregion  
 
     public MainViewModel(BarometerService barometerService, GpsService gpsService)
@@ -42,11 +44,14 @@ public class MainViewModel : BaseViewModel
         barometerService.ValueChanged = OnUpdatePressureLabel;
 
         StatusLabel = "Trending...";
-        TrendImage = "trendingup.png";
+        TrendImage = "trendingdown.png";
 
-        // Notification test
-        //Services.ServiceProvider.GetService<INotificationService>()
-        //		?.ShowNotification("Storm Alert", "Permission test 🤓");
+        
+        TestAlertCommand = new Command(() => {
+            // Notification test
+            Services.ServiceProvider.GetService<INotificationService>()
+                    ?.ShowNotification("Storm Alert", "An incoming storm front has been detected! 😲");
+        });
 
         float universeAdjust = 30;
         float curPressure = 1013 + universeAdjust;
@@ -60,23 +65,23 @@ public class MainViewModel : BaseViewModel
            new PressureChartData(6, curPressure - 1004),
            new PressureChartData(7, curPressure - 1006),
            
-           new PressureChartData(8, curPressure - 1007),
-           new PressureChartData(9, curPressure - 1007),
-           new PressureChartData(10, curPressure - 1009),
-           new PressureChartData(11, curPressure - 1010),
-           new PressureChartData(12, curPressure - 1011),
-           new PressureChartData(13, curPressure - 1011),
-           new PressureChartData(14, curPressure - 1012),
-           new PressureChartData(15, curPressure - 1012),
-           new PressureChartData(16, curPressure - 1012),
-           new PressureChartData(17, curPressure - 1009),
-           new PressureChartData(18, curPressure - 1008),
+           new PressureChartData(8, curPressure - 1006),
+           new PressureChartData(9, curPressure - 1006),
+           new PressureChartData(10, curPressure - 1005),
+           new PressureChartData(11, curPressure - 1004),
+           new PressureChartData(12, curPressure - 1003),
+           new PressureChartData(13, curPressure - 1003),
+           new PressureChartData(14, curPressure - 1002),
+           new PressureChartData(15, curPressure - 1002),
+           new PressureChartData(16, curPressure - 1004),
+           new PressureChartData(17, curPressure - 1005),
+           new PressureChartData(18, curPressure - 1006),
            new PressureChartData(19, curPressure - 1007),
            new PressureChartData(20, curPressure - 1007),
-           new PressureChartData(21, curPressure - 1006),
-           new PressureChartData(22, curPressure - 1005),
-           new PressureChartData(23, curPressure - 1004),
-           new PressureChartData(24, curPressure - 1003),
+           new PressureChartData(21, curPressure - 1008),
+           new PressureChartData(22, curPressure - 1008),
+           new PressureChartData(23, curPressure - 1009),
+           new PressureChartData(24, curPressure - 1010),
        };
     }
 

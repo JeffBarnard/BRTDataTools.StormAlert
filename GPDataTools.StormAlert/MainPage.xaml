@@ -107,13 +107,15 @@
                                FontAttributes="Bold"
                                HorizontalOptions="Center" />
 
-                        <Image x:Name="TrendImage" Grid.Row="3" Margin="-8 0 0 0"
+                        <Image x:Name="TrendImage" Grid.Row="3" Margin="-16 0 0 0"
                                Source="{Binding TrendImage}"
                                Opacity="0.54"
                                WidthRequest="120"
                                HeightRequest="120"
                                HorizontalOptions="CenterAndExpand" />
 
+                        <Button GridLayout.Row="3" Text="TEST ALERT" WidthRequest="128" HorizontalOptions="Center" Margin="120 0 0 0"
+                                Command="{Binding TestAlertCommand}"/>
                     </Grid>
 
                 </VerticalStackLayout>
