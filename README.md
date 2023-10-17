@@ -1,4 +1,4 @@
-# Barnard Racing Team Data Tools - StormAlert
+# BRT Racing Data Tools - StormAlert
  
 A cross-platform MAUI .NET mobile app that detects storms based on the rate of change of barometric pressure.
  
